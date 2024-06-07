@@ -99,8 +99,10 @@ jobs:
           python -m pip install build
           python -m build
 
-      - name: 🚢 Publish to PyPI
+      - name: Publish to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
 
       - uses: softprops/action-gh-release@v1
         with:
